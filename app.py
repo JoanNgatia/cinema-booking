@@ -1,12 +1,17 @@
-from flask import Flask
+import os
+
+from flask import Flask, render_template
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
+app.config.from_object(os.environ['APP_SETTINGS'])
+db = SQLAlchemy(app)
 
 
 @app.route("/")
 @app.route("/seats")
 def home():
-    return 'Hello world. Here now!'
+    return render_template('home.html')
 
 
 @app.route("/seats/<id>/")
