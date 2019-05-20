@@ -8,6 +8,10 @@ pep8 = "*"
 
 [packages]
 flask = "*"
+flask-sqlalchemy = "*"
+mysql-python = "==1.2.5"
+psycopg2 = "*"
+flask-migrate = "*"
 
 [requires]
 python_version = "3.7"
